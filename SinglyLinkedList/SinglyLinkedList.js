@@ -5,7 +5,7 @@ class SinglyLinkedList {
         this.head = null;
         this.size = 0;
     }
-    add(element){
+    add(element) {
         const node = new Node(element);
         if (!this.head) {
             this.head = node;
@@ -28,6 +28,10 @@ class SinglyLinkedList {
         }
         console.log(string);
     }
+
+    count() {
+        return this.size || 0;
+    }
 }
 
 const SLinkedList = new SinglyLinkedList();
@@ -36,3 +40,4 @@ SLinkedList.add(2);
 SLinkedList.add(3);
 SLinkedList.add(4);
 SLinkedList.print();
+console.log('Size :', SLinkedList.count());
