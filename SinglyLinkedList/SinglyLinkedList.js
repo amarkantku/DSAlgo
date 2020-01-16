@@ -41,3 +41,4 @@ SLinkedList.add(3);
 SLinkedList.add(4);
 SLinkedList.print();
 console.log('Size :', SLinkedList.count());
+export default SinglyLinkedList;
