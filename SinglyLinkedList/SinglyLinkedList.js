@@ -32,6 +32,10 @@ class SinglyLinkedList {
     count() {
         return this.size || 0;
     }
+
+    isEmpty() {
+        return this.size === 0;
+    }
 }
 
 const SLinkedList = new SinglyLinkedList();
@@ -41,4 +45,4 @@ SLinkedList.add(3);
 SLinkedList.add(4);
 SLinkedList.print();
 console.log('Size :', SLinkedList.count());
-export default SinglyLinkedList;
+console.log('isEmpty ? :', SLinkedList.isEmpty());
