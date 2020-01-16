@@ -36,6 +36,30 @@ class SinglyLinkedList {
     isEmpty() {
         return this.size === 0;
     }
+
+    addFirst(element) {
+        const node = new Node(element);
+        if(!this.head) {
+            this.head = node;
+        } else {
+            const current = this.head;
+            node.next = current;
+            this.head = node;
+        }
+        this.size++;
+    }
+
+    getFirst() {
+        return !this.head ? 'List is empty' : this.head.element;
+    }
+
+    getLast() {
+        let current = this.head;
+        while(current.next !== null){
+            current = current.next;
+        }
+        return current.element;
+    }
 }
 
 const SLinkedList = new SinglyLinkedList();
@@ -46,3 +70,8 @@ SLinkedList.add(4);
 SLinkedList.print();
 console.log('Size :', SLinkedList.count());
 console.log('isEmpty ? :', SLinkedList.isEmpty());
+SLinkedList.addFirst(10);
+SLinkedList.print();
+console.log('first element:', SLinkedList.getFirst());
+SLinkedList.print();
+console.log('last element:', SLinkedList.getLast());
