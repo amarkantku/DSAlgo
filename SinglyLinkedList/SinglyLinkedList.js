@@ -60,6 +60,18 @@ class SinglyLinkedList {
         }
         return current.element;
     }
+
+    reverse() {
+        let prev = null, next = null;
+        let current = this.head;
+        while(current !== null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        this.head = prev;
+    }
 }
 
 const SLinkedList = new SinglyLinkedList();
@@ -75,3 +87,5 @@ SLinkedList.print();
 console.log('first element:', SLinkedList.getFirst());
 SLinkedList.print();
 console.log('last element:', SLinkedList.getLast());
+SLinkedList.reverse();
+SLinkedList.print();
