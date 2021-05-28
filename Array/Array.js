@@ -100,3 +100,23 @@ Array.prototype.popElement = function() {
 }
 
 console.log([1, 2, 3, 4, 5].itemIndexOf(5,-1));
+
+
+Array.prototype.myReduce = function(callback, initValue) {
+  let acc = initValue || undefined;
+
+  for (let i = 0; i < this.length; i++) {
+    if (acc !== undefined) {
+      acc = callback.call(undefined, acc, this[i], i, this);
+
+    } else {
+      acc = this[i];
+    }
+  }
+  return acc;
+};
+
+console.log([1, 2, 4, 5, 6, 8].myReduce(function(a, e) {
+  return a + e;
+}, 10));
+
